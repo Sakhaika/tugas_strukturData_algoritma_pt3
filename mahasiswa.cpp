@@ -1,6 +1,7 @@
 #include<iostream>
 #include<iomanip>
 using namespace std;
+// Sakha Ibadil Kirom - 2507411064
 
 // deklarasi struct mahasiswa
 struct mahasiswa {
@@ -194,7 +195,7 @@ void menuPilihanSearching(mahasiswa mhs[], int jumlah){
 int main(){
     int jumlahMahasiswa;
 
-    cout << "Selamat Datang di Program Menghitung Nilai Akhir Mahasiswa" << endl;
+    cout << "Selamat Datang di Program Sakha Menghitung Nilai Akhir Mahasiswa" << endl;
     cout << "Berapa Mahasiswa yang ingin diinput: "; cin >> jumlahMahasiswa;
 
     mahasiswa mhs[jumlahMahasiswa];

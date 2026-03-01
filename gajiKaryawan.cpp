@@ -1,6 +1,7 @@
 #include<iostream>
 #include<iomanip>
 using namespace std;
+// Sakha Ibadil Kirom - 2507411064
 
 // deklarasi struct karyawan
 struct karyawan {
@@ -27,6 +28,16 @@ void cetakHeader(){
     cetakGaris();
 }
 
+// fungsi untuk menghitung gaji total berdasarkan jam kerja per minggu
+int gajiTotal(int jamKerjaPerMinggu){
+    if(jamKerjaPerMinggu <= 40){
+        return jamKerjaPerMinggu * 6000;
+    } else {
+        int gajiLembur = (jamKerjaPerMinggu - 40) * 18000;
+        return (40 * 6000) + gajiLembur;
+    }
+}
+
 // fungsi untuk mencetak satu baris data karyawan dalam tabel
 void cetakBaris(int no, string nama, int jam){
     string gaji = "Rp " + to_string(gajiTotal(jam));
@@ -37,15 +48,6 @@ void cetakBaris(int no, string nama, int jam){
          << " |" << endl;
 }
 
-// fungsi untuk menghitung gaji total berdasarkan jam kerja per minggu
-int gajiTotal(int jamKerjaPerMinggu){
-    if(jamKerjaPerMinggu <= 40){
-        return jamKerjaPerMinggu * 6000;
-    } else {
-        int gajiLembur = (jamKerjaPerMinggu - 40) * 18000;
-        return (40 * 6000) + gajiLembur;
-    }
-}
 
 // fungsi untuk input data karyawan
 void perulanganKaryawan(karyawan employee[], int jumlahKaryawan){
@@ -163,6 +165,7 @@ void tampilkanMenu(karyawan employee[], int jumlahKaryawan){
 // code utama yang dijalankan program
 int main(){
     int jumlahKaryawan;
+    cout << "=== PROGRAM SAKHA MANAJEMEN GAJI KARYAWAN ===" << endl;
     cout << "Masukkan Jumlah Karyawan: ";
     while(!(cin >> jumlahKaryawan)){
         cin.clear();
