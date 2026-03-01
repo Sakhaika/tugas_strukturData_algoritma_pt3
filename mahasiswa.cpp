@@ -2,6 +2,7 @@
 #include<iomanip>
 using namespace std;
 
+// deklarasi struct mahasiswa
 struct mahasiswa {
     string nama;
     long long nim;
@@ -11,6 +12,7 @@ struct mahasiswa {
     int nilaiAkhir, nilaiTugas, nilaiKuis, nilaiMid, nilaiUas;
 };
 
+// fungsi untuk input data mahasiswa
 void perulanganMahasiswa(mahasiswa mhs[], int jumlahMahasiswa){
     for(int i = 0; i < jumlahMahasiswa; i++){
         cout << "\n=== Input Data Mahasiswa ke-" << i+1 << " ===" << endl;
@@ -26,11 +28,6 @@ void perulanganMahasiswa(mahasiswa mhs[], int jumlahMahasiswa){
         cout << "Masukkan Nilai UAS Mahasiswa: "; cin >> mhs[i].nilaiUas;
         mhs[i].nilaiAkhir = (mhs[i].nilaiTugas * 0.3) + (mhs[i].nilaiKuis * 0.1) + (mhs[i].nilaiMid * 0.3) + (mhs[i].nilaiUas * 0.3);
     }
-}
-
-int hitungNilaiAkhir(mahasiswa &mhs){
-    mhs.nilaiAkhir = (mhs.nilaiTugas * 0.3) + (mhs.nilaiKuis * 0.1) + (mhs.nilaiMid * 0.3) + (mhs.nilaiUas * 0.3);
-    return mhs.nilaiAkhir;
 }
 
 string getMutuNilai(int nilaiAkhir){
@@ -114,7 +111,7 @@ void menuPilihanSearching(mahasiswa mhs[], int jumlah){
         cout << "Masukkan Pilihan: "; cin >> pilihan;
 
         bool found = false;
-        // temp array untuk tampung hasil search
+        
         mahasiswa hasil[jumlah];
         int jumlahHasil = 0;
 
