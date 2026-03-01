@@ -30,6 +30,7 @@ void perulanganMahasiswa(mahasiswa mhs[], int jumlahMahasiswa){
     }
 }
 
+// fungsi untuk menentukan mutu nilai berdasarkan nilai akhir
 string getMutuNilai(int nilaiAkhir){
     if(nilaiAkhir > 85)     return "A";
     else if(nilaiAkhir > 70) return "B";
@@ -45,7 +46,7 @@ void printGaris(){
          << "+" << string(8,'-') << "+" << string(8,'-') << "+" << string(13,'-') << "+" << string(7,'-') << "+" << endl;
 }
 
-// print header tabel
+// membuat header tabel
 void printHeader(){
     printGaris();
     cout << "|" << left << setw(5)  << "No"
@@ -96,6 +97,7 @@ void outputMahasiswa(mahasiswa &mhs){
     printBaris(mhs, 1);
 }
 
+// menu pilihan searching
 void menuPilihanSearching(mahasiswa mhs[], int jumlah){
     int pilihan;
     
@@ -188,6 +190,7 @@ void menuPilihanSearching(mahasiswa mhs[], int jumlah){
     } while(pilihan != 7);
 }
 
+// code utama yang dijalankan program
 int main(){
     int jumlahMahasiswa;
 
@@ -196,11 +199,14 @@ int main(){
 
     mahasiswa mhs[jumlahMahasiswa];
 
+    // memanggil fungsi untuk input data mahasiswa
     perulanganMahasiswa(mhs, jumlahMahasiswa);
 
     cout << "\n========== DATA SEMUA MAHASISWA ==========" << endl;
+    // memanggil fungsi untuk output semua mahasiswa dalam tabel
     outputTabelMahasiswa(mhs, jumlahMahasiswa);
 
+    // memanggil fungsi untuk menu pilihan searching
     menuPilihanSearching(mhs, jumlahMahasiswa);
 
     return 0;
